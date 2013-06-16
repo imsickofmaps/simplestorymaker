@@ -1,0 +1,15 @@
+{{ text }}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'writer:new' %}" method="post">
+{% csrf_token %}
+    So that <input type="text" name="reason" placeholder="reason">, as a
+    <select name="role">
+    {% for role in roles %}
+        <option value="{{ role.id }}">{{ role.name }}</option>
+    {% endfor %}
+    </select>, I want
+    <input type="text" name="goal" placeholder="goal">
+<input type="submit" value="Add" />
+</form>

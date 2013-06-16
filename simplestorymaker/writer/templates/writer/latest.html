@@ -1,0 +1,9 @@
+{% if latest_story_list %}
+    <ul>
+    {% for story in latest_story_list %}
+        <li><a href="{% url 'writer:story' story.id %}">{{ story.reason }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No stories are available.</p>
+{% endif %}
