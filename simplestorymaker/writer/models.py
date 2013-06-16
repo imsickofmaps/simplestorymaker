@@ -14,6 +14,7 @@ class Story(models.Model):
     reason = models.CharField(max_length=200)
     role = models.ForeignKey(Role)
     goal = models.CharField(max_length=200)
+    create_date = models.DateTimeField('date created')
 
     def __unicode__(self):
         return u"So that " + self.reason + u" as a " + self.role.name + u" I want " + self.goal
