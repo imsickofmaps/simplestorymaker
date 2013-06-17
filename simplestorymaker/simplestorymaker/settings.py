@@ -1,4 +1,5 @@
 # Django settings for simplestorymaker project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -37,6 +38,8 @@ LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
+BASE_DIR = '/Users/mikej/Documents/code/simplestorymaker/simplestorymaker'
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -72,6 +75,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, "simplestorymaker/static"),
 )
 
 # List of finder classes that know how to find static files in
