@@ -1,5 +1,8 @@
 *.py[cod]
 
+# OS X 
+*.DS_Store
+
 # Virtualenv
 ve
 

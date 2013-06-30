@@ -32,7 +32,7 @@ def story(request, story_id):
 
 
 def new(request):
-    if (request.POST['reason'] != '' and request.POST['role'] != ''
+    if (request.POST and request.POST['reason'] != '' and request.POST['role'] != ''
             and request.POST['goal'] != ''):
         role = Role.objects.get(id=request.POST['role'])
         story = Story(reason=request.POST['reason'], role=role,
@@ -40,4 +40,8 @@ def new(request):
         story.save()
         return HttpResponseRedirect(reverse('writer:story', args=(story.id,)))
     else:
-        return HttpResponseRedirect(reverse('writer:index'))
+        return render(request, 'writer/new.html')
+
+
+def flat(request):
+    return render(request, 'writer/flat.html')

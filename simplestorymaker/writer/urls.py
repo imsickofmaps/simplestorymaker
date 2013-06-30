@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^latest', views.latest, name='latest'),
     url(r'^(?P<story_id>\d+)$', views.story, name='story'),
     url(r'^new', views.new, name='new'),
+    url(r'^flat', views.flat, name='flat'),
 )
